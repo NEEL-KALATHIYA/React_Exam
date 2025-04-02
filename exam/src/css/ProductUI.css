@@ -1,0 +1,115 @@
+/* styles.css */
+.product-card {
+  max-width: 300px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-card h2 {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: #172831;
+  text-align: center;
+}
+
+.product-card p {
+  margin: 5px 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.product-card .button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.product-card button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.product-card button:first-of-type {
+  background: #172831;
+  color: #fff;
+}
+
+.product-card button:first-of-type:hover {
+  background: #0f1c22;
+}
+
+.product-card button:last-of-type {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.product-card button:last-of-type:hover {
+  background: #c0392b;
+}
+
+/* Make it responsive */
+@media screen and (max-width: 600px) {
+  .product-card {
+    max-width: 100%;
+  }
+
+  .product-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+  }
+
+  .product-card button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+.edit-form input,
+.edit-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-form button {
+  padding: 8px 10px;
+  background: #172831;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.edit-form button:hover {
+  opacity: 0.9;
+}
