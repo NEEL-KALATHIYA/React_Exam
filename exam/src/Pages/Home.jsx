@@ -6,8 +6,8 @@ import Form from "../components/Form";
 import methodAPI from "../redux/Action";
 
 const Home = () => {
-  let { products } = useSelector((store) => store);
   const dispatch = useDispatch();
+  const { products } = useSelector((store) => store);
 
   // Fetch products when the component mounts
   useEffect(() => {
@@ -22,17 +22,23 @@ const Home = () => {
     <>
       <Form refreshProducts={refreshProducts} />
       <div className="home-container">
-        {products.map(({ id, title, price, category, image }) => (
-          <ProductUI
-            key={id}
-            title={title}
-            id={id}
-            price={price}
-            category={category}
-            image={image}
-            refreshProducts={refreshProducts}
-          />
-        ))}
+        {products.length > 0 ? (
+          products.map(({ id, title, price, category, image }) => (
+            <ProductUI
+              key={id}
+              title={title}
+              id={id}
+              price={price}
+              category={category}
+              image={image}
+              refreshProducts={refreshProducts}
+            />
+          ))
+        ) : (
+          <h2 style={{ textAlign: "center", color: "#555" }}>
+            No products available
+          </h2>
+        )}
       </div>
     </>
   );
